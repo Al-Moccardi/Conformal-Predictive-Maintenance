@@ -66,7 +66,6 @@ before triggering timely interventions.
 ## Quick Start (Colab)
 
 1. Click the badge at the top of this page **or** the link below:
-   [https://colab.research.google.com/drive/1USNgrhhX\_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing](https://colab.research.google.com/drive/1USNgrhhX_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing)
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1USNgrhhX_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing)
 
