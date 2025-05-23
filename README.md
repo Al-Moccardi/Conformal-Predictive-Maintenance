@@ -20,16 +20,47 @@
 ## Overview
 
 This **single‑notebook implementation** delivers an end‑to‑end pipeline for *Remaining Useful Life* (**RUL**) prediction on the NASA CMAPSS turbofan benchmark and augments it with **robust conformal prediction** to provide calibrated, statistically valid uncertainty bounds.
+![image](https://github.com/user-attachments/assets/f6a333f6-1143-40bf-8f1b-2de6ef143afd)
 
-The notebook is designed for **reproducible research**: every experiment cell is parameterised, random seeds are fixed, and all results match those reported in the accompanying journal article.
+The proposed prognostic workflow, presented in Fig. 8, begins by generating RUL 
+estimations from ML or DL models and comparing the validation performances, with these 
+initial predictions passed through a regulation step where non-increasing monotonicity is 
+enforced to ensure that RUL does not inappropriately increase over time, which represents 
+a critical constraint in most degradation processes. 
+Next, the framework proceeds to the calibration and residuals phase, where the 
+regulated predictions are compared against true values from a calibration set (training set) 
+to compute residuals and the margin estimators applied to these residuals to quantify the 
+uncertainty Specifically, this work considers the three main strategies introduced in the 
+Sec. 3.2 (Naïve , bootstrapping, weighted margin) which are commonly applied in time 
+series conformal applications. 
+• Naive Margin (Quantile 1-α) uses a straightforward quantile-based approach. 
+• Bootstrap Margin (Median Bootstrap) leverages resampling to obtain robust estimates 
+of variability. 
+• Weighted Margin (Exponential Weighting) accounts for time-varying or instance- 
+specific importance. 
+The latter phase consent to compare or combine the calculated margin with the 
+final confidence further halved (not considering superior CI) and conservatively adjusted 
+to avoid excessively wide intervals (selecting the proper confidence value α ) reflecting 
+engineering judgment and domain requirements for safety and cost considerations. Given 
+these conditions, the outlined approach constructs the final prediction interval, intentionally 
+bounded above by the regulated prediction, thereby preserving the strictly decreasing RUL 
+trajectory and mitigating undue sensitivity to sensor noise. The CI estimation provides 
+coverage that aligns with desired confidence levels, giving the possibility to evaluate the 
+proximity to EoL score, which gives an idea of the model conservativeness by calculating 
+the time window distance between the conformal critical status (when CI predicts RUL=0) 
+and the actual Eol (when validation RUL = 0), allowing engineers and practitioners to 
+evaluate whether immediate intervention is warranted or if further analysis is possible 
+before triggering timely interventions.
+
 
 ## Key Features
 
 * ⚙️ **Modular deep‑learning stack**: LSTM, BiLSTM, CNN‑GRU, N‑BEATS and an XGBoost baseline.
 * 🎯 **Monotonicity‑aware loss** ensures physically plausible, non‑increasing RUL curves.
 * 📏 **Conformal wrappers**: naïve, exponentially‑weighted and bootstrap residual margins.
-* 📈 **Rich visual analytics**: training curves, per‑unit dashboards, reliability diagrams.
-* 🚀 **One‑click Google Colab runtime**—no local setup required.
+
+![image](https://github.com/user-attachments/assets/b4dca189-6277-48c9-b856-631dd22ab829)
+
 
 ## Quick Start (Colab)
 
@@ -54,14 +85,9 @@ Select the desired mode and confidence level directly in the *“Configuration�
 
 The methodology was evaluated on the four standard **NASA CMAPSS** subsets. The table below reports the **best model per subset**, selected via validation *S‑score*, together with classic accuracy metrics and empirical 95 % conformal‑prediction coverage.
 
-**Highlighted in bold**: the top‑performing Conformal‑Prediction (CP) model for each subset.  **💎** indicates the overall best CP run across all benchmarks.
+![image](https://github.com/user-attachments/assets/a29d9371-4d70-4687-992b-083b313b95d0)
 
-| Subset | Best CP Model  | S‑score ↓ | MAE (cycles) ↓ | RMSE ↓   | R² ↑     | 95 % CP coverage |
-| ------ | -------------- | --------- | -------------- | -------- | -------- | ---------------- |
-| FD001  | **N‑BEATS**    | 24 069    | 14.3           | 18.6     | 0.86     | 0.945            |
-| FD002  | **CNN‑GRU**    | 75 307    | 13.0           | 17.7     | 0.82     | 0.952            |
-| FD003  | **N‑BEATS 💎** | 22 870    | **10.6**       | **15.0** | **0.91** | 0.948            |
-| FD004  | **BiLSTM**     | 273 456   | 17.3           | 22.5     | 0.80     | 0.941            |
+![image](https://github.com/user-attachments/assets/bd1252bf-6b2d-4028-b059-a95e158b4b75)
 
 ### Key Takeaways
 
