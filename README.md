@@ -2,11 +2,6 @@
 
     
 
-> *A dedicated Colab notebook implementing the methodology from*
-> **“A Robust Conformal Framework for IoT‑Based Predictive Maintenance”**
-> *Alberto Moccardi · Claudia Conte · Rajib Chandra Ghosh · Francesco Moscato* — *Future Internet (2024)*
-
----
 
 ## Table of Contents
 
@@ -80,19 +75,7 @@ The notebook fetches the original **NASA CMAPSS** files on first execution. For
 
 > Saxena A. *et al.* “Turbofan Engine Degradation Simulation Data Set”, 2008.
 
-## Citation
 
-If you build upon this work, please cite the origin article:
-
-```bibtex
-@article{moccardi2024conformalpdm,
-  title   = {A Robust Conformal Framework for IoT-Based Predictive Maintenance},
-  author  = {Moccardi, Alberto and Conte, Claudia and Chandra Ghosh, Rajib and Moscato, Francesco},
-  journal = {Future Internet},
-  year    = {2024},
-  doi     = {10.3390/fi1010000}
-}
-```
 
 ## License
 
