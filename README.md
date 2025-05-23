@@ -4,7 +4,8 @@
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/framework-TensorFlow-orange.svg)](https://www.tensorflow.org/)
 [![scikit-learn](https://img.shields.io/badge/library-scikit--learn-blue)](https://scikit-learn.org/)
-[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)]([https://colab.research.google.com/drive/1LmY0QvsebPMth4cCeg-pn6Pk_Tob4UfK?usp=sharing)](https://colab.research.google.com/drive/1USNgrhhX_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing)
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1USNgrhhX_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing)
+
 
 
 ## Table of Contents
