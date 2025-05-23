@@ -15,10 +15,6 @@
 3. [Quick Start (Colab)](#quick-start-colab)
 4. [Conformal Prediction Modes](#conformal-prediction-modes)
 5. [Experimental Results](#experimental-results)
-6. [Dataset](#dataset)
-7. [Citation](#citation)
-8. [License](#license)
-9. [Acknowledgements](#acknowledgements)
 
 ---
 
@@ -71,8 +67,12 @@ before triggering timely interventions.
 
 1. Click the badge at the top of this page **or** the link below:
    [https://colab.research.google.com/drive/1USNgrhhX\_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing](https://colab.research.google.com/drive/1USNgrhhX_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing)
-2. Select **“Runtime → Change runtime type → GPU”** for faster training (optional but recommended).
-3. Run the notebook cells sequentially; each section is self‑documented and includes performance checkpoints.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1USNgrhhX_6Lwznq60azDZ4EZi4cxfyj0?usp=sharing)
+
+
+3. Select **“Runtime → Change runtime type → GPU”** for faster training (optional but recommended).
+4. Run the notebook cells sequentially; each section is self‑documented and includes performance checkpoints.
 
 > **Tip 💡**: The notebook automatically downloads the CMAPSS dataset (\~250 MB) into the Colab session—no manual intervention needed.
 
